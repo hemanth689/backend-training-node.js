@@ -14,6 +14,4 @@ function findCount(s) {
     let str = 'aabbaaaccbb';
     let ans = findCount(str);
     console.log(ans);
-
-
-    ///dflldsfjlkjlkjlksdjlkjflsjdflksjaljdlkjslkfjslkdjl
+    

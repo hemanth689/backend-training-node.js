@@ -13,5 +13,3 @@ const newArr1 = products.filter(p => p.name.includes("phone"));
 const newArr2 = products.filter(p => p.price>2000);
 const newArr3 = products.filter(p => { return p.price>2000 && p.colour.includes("B") });
 console.log(newArr1, newArr2, newArr3);
-
-//dsjkfjdlsjflksjdlkfjsdsd

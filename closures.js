@@ -1,88 +1,43 @@
 /* 
-Ex1 : This is also one closure.
-closure : Function bundled with its lexical environment is known as a closure. Whenever function is returned, even if its vanished in execution context but still it remembers the reference it was pointing to. Its not just that function alone it returns but the entire closure
-In JS we can pass functions as parameters and we can return function and we can assign function to a variable as well.
-
-function x()
-{
-    var a=7;
-    function y()
-    {
-        console.log(a);
-    }
-    y();
-}
-x();
-
+closure is a function which remembers its variables, functions which are declared in this function.
+It can access those attributes even after function execution.
+It can access its lexical scope as well which means scope of parent function.
+It can refer to parent scope is it does not find the variable, even if does not find in parent scope then 
+it goes to its parent of parent scope until it finds. It doesn't find anywhere it just throw an error like Reference Error - not defined.
 */
 
-/*
-Ex2
+//Example1
 
-function x()
+function outerFunction1()
 {
-    var a=7;
-    return function y()
+    var value=7;
+    return function innerFunction1()
     {
-        console.log(a);
+        console.log(value);
     }
-    //return y;
+    //return innerFunction;
 }
 
-var z=x();
+var newFunction=outerFunction1();
+//..............so many lines of code............ if we write so many lines of code.
+
+console.log(newFunction);   //it return a y function.
+newFunction();       //it still remembers its lexical environment and all the things even x() function is vanished from execution context.
 
 
-
-//..............so many lines of code............
-
-console.log(z);   //it return a y function.
-z();       //it still remembers its lexical environment and all the things even x() function is vanished from execution context.
-
-*/
-
-/*
-Ex3
-
-function x()
+//Example2
+function OutestFunction()
 {
-    var a=7;
-    function y()
+    var value1=900;
+    function outerFunction()
     {
-        console.log(a);
-    }
-    a=100;
-    return y;
-}
-
-var z=x();
-z();
-
-*/
-
-function z()
-{
-    var b=900;
-    function x()
-    {
-        var a=7;
-        function y()
+        var value2=20;
+        function innerFunction()
         {
-            console.log(a, b);
+            console.log(value1, value2);
         }
-        y();
+        innerFunction();
     }
-    x();
+    outerFunction();
 }
-z();
-
-/* 
-    Uses of Closures:
-    - Module design pattern
-    - currying
-    - functions like once
-    - memoize 
-    - maintaining state in async world
-    - setTimeOuts
-    - Iterators
-    - and many more...
-*/
+OutestFunction();

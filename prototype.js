@@ -1,5 +1,5 @@
-let arr=["Hemanth", "Kumar"];
-let object = {
+let names=["Hemanth", "Kumar"];
+let details = {
     name : "Hemanth",
     city : "Kurnool",
     getIntro : function()
@@ -7,21 +7,21 @@ let object = {
         console.log(this.name+" from "+this.city);
     }
 }
-function func()
+function empty()
 {
     //
 }
 
-console.log(arr.__proto__);
+console.log(names.__proto__);
 console.log(Array.prototype)
-console.log(func.__proto__);
+console.log(empty.__proto__);
 console.log(Function.prototype);
-console.log(arr.__proto__.__proto__);
+console.log(names.__proto__.__proto__);
 console.log(Object.prototype);
-console.log(func.__proto__.__proto__);
+console.log(empty.__proto__.__proto__);
 console.log(Object.prototype);
-console.log(arr.__proto__.__proto__.__proto__);
-console.log(func.__proto__.__proto__.__proto__);
+console.log(names.__proto__.__proto__.__proto__);
+console.log(empty.__proto__.__proto__.__proto__);
 /*
 
 Inheritance in JS => When an object trying to access variables and properties of another object.

@@ -3,15 +3,15 @@ Function.prototype.mybind = function()
     console.log("Hello this is mybind function.");
 }
 
-function fun1()
+function empty1()
 {
 
 }
-function fun2()
+function empty2()
 {
 
 }
 
 //every function can access to mybind function because it binds to Function prototype.
-console.log(fun1.mybind());
-console.log(fun2.mybind());
+console.log(empty1.mybind());
+console.log(empty2.mybind());

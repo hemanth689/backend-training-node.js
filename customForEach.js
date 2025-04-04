@@ -20,19 +20,19 @@ Array.prototype.customForEach = function(callback) {
     }
 };
 //without the above code not possible to use customForEach() method.And also it should be in top as well.
-const arr = [98,88,78,68,58,48,38,28,18,8];
-arr.customForEach((item, index, array) => {
+const numbers = [98,88,78,68,58,48,38,28,18,8];
+numbers.customForEach((item, index, array) => {
     console.log(`Element at ${index} : ${item}`);
 });
 
 //Example2
-Array.prototype.len = function(array)
+Array.prototype.len = function(items)
 {
-    return array.length;
+    return items.length;
 };
 
-const arr1 = [10,20,30,40,50,60,70];
-console.log(arr1.len(arr1));
+const items1 = [10,20,30,40,50,60,70];
+console.log(items1.len(items1));
 
-const arr2 = [21,31,41,51,61,71,81,91,101,111,121,131];
-console.log(arr2.len(arr2));
+const items2 = [21,31,41,51,61,71,81,91,101,111,121,131];
+console.log(items2.len(items2));

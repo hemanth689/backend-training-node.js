@@ -12,6 +12,7 @@ const products = [
 { name : "Tablet", price : 10000, colour: "Blue" }
 ];
 
+<<<<<<< HEAD
 const requiredPrice = 2000;
 const productNameContains = "phone";
 const productColourContains = "B";
@@ -19,3 +20,9 @@ const newProducts1 = products.filter(p => p.name.includes(productNameContains));
 const newProducts2 = products.filter(p => p.price>requiredPrice);
 const newProducts3 = products.filter(p => { return p.price>requiredPrice && p.colour.includes(productColourContains) });
 console.log(newProducts1, newProducts2, newProducts3);
+=======
+const newArr1 = products.filter(p => p.name.includes("phone"));
+const newArr2 = products.filter(p => p.price>2000);
+const newArr3 = products.filter(p => { return p.price>2000 && p.colour.includes("B") });
+console.log(newArr1, newArr2, newArr3);
+>>>>>>> origin/day4

@@ -3,13 +3,13 @@ until it comes to single unit. After that it will merge the two halves in sortin
 
 */
 //merge() function is used to merge the two subarrays.
-function merge(num,lb,mid,ub)
+function merge(num,lowerBound,mid,upperBound)
 {
     const temp = [];     //take an empty array to push the sorted elements.
-    let left=lb, right=mid+1;           //Here we have two subarrays which are sorted itself.
+    let left=lowerBound, right=mid+1;           //Here we have two subarrays which are sorted itself.
     //left is pointing to first element of first subarray and right is pointing to first element of second subarray.
     //Inorder to sort these subarrays. we have to loop until the end of two subarrays. Here mid is points to last element of first subarray.
-    while(left<=mid && right <= ub)
+    while(left<=mid && right <= upperBound)
     {
         //check whether first element of first subarray is lesser than first element of second subarray.
         if(num[left]<=num[right])   
@@ -30,25 +30,25 @@ function merge(num,lb,mid,ub)
         left++;
     }
     //Incase of rightsubarray also we can directly add those.
-    while(right<=ub)
+    while(right<=upperBound)
     {
         temp.push(num[right]);
         right++;
     }
     //we have to make changes in original array as well. we have to copy elements from temp.
-    for(let i=lb;i<=ub;i++)
+    for(let i=lowerBound;i<=upperBound;i++)
     {
-        num[i]=temp[i-lb];  //here (i-lb) means every time temp is starts from 0. we have to copy values from index 0;
+        num[i]=temp[i-lowerBound];  //here (i-lb) means every time temp is starts from 0. we have to copy values from index 0;
     }
 }
 
-function mergeSort(num,lb,ub)
+function mergeSort(numbers,lowerBound,upperBound)
 {
-    if(lb>=ub) return;      //This is the base condition. It will check subarray has single element or not to stop dividing.
-    const mid = Math.floor((lb+ub)/2);      //calculate the mid value.
-    mergeSort(num,lb,mid);              //calling mergeSort() function to divide left subarray.
-    mergeSort(num,mid+1,ub);            //calling this function to divide right subarray.
-    merge(num,lb,mid,ub);               //Once dividing is over it starts to merge the two subarray.
+    if(lowerBound>=upperBound) return;      //This is the base condition. It will check subarray has single element or not to stop dividing.
+    const mid = Math.floor((lowerBound+upperBound)/2);      //calculate the mid value.
+    mergeSort(numbers,lowerBound,mid);              //calling mergeSort() function to divide left subarray.
+    mergeSort(numbers,mid+1,upperBound);            //calling this function to divide right subarray.
+    merge(numbers,lowerBound,mid,upperBound);               //Once dividing is over it starts to merge the two subarray.
 }
 
 const numbers = [9,4,1,7,2,9,7,6,2,0,8,5,1];

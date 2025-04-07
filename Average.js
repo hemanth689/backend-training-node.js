@@ -8,7 +8,7 @@ const details = {
 
 //get the keys of object using Object.keys() method and iterate through the keys. check the marks using keys.
 Object.keys(details).forEach((key) => {
-    if(details[key]<100 && details[key]>=90)
+    if(details[key]<=100 && details[key]>=90)
     {
         console.log(`${key} got a grade A`);
     }

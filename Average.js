@@ -28,4 +28,8 @@ Object.keys(details).forEach((key) => {
     {
         console.log(`${key} got a grade E`);
     }
+    else
+    {
+        console.log(`Invalid Marks`);
+    }
 });

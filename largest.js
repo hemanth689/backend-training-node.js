@@ -1,32 +1,32 @@
-const a = 19;
-const b = 51;
-const c = 49;
-const d = -65;
-const e = 52;
+const value1 = 19;
+const value2 = 51;
+const value3 = 49;
+const value4 = -65;
+const value5 = 52;
 
-if(a>=b && a>=c && a>=d && a>=e)
+if(value1>=value2 && value1>=value3 && value1>=value4 && value1>=value5)
 {
-    alert(`${a} is the largest number`);
+    alert(`${value1} is the largest number`);
     //console.log(`${a} is the largest number`);
 }
-else if(b>=c && b>=d && b>=e && b>=a)
+else if(value2>=value3 && value2>=value4 && value2>=value5 && value2>=value1)
 {
-    alert(`${b} is the largest number`);
+    alert(`${value2} is the largest number`);
     //console.log(`${b} is the largest number`);
 }
-else if(c>=d && c>=e && c>=a && c>=b)
+else if(value3>=value4 && value3>=value5 && value3>=value1 && value3>=value2)
 {
-    alert(`${c} is the largest number`);
+    alert(`${value3} is the largest number`);
     //console.log(`${c} is the largest number`);
 }
-else if(d>=e && d>=a && d>=b && d>=c)
+else if(value4>=value5 && value4>=value1 && value4>=value2 && value4>=value3)
 {
-    alert(`${d} is the largest number`);
+    alert(`${value4} is the largest number`);
     //console.log(`${d} is the largest number`);
 }
 else
 {
-    alert(`${e} is the largest number`);
+    alert(`${value5} is the largest number`);
     //console.log(`${e} is the largest number`);
 }
 

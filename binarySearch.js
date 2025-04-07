@@ -1,26 +1,26 @@
-function bsearch(elements, val)
+function bsearch(elements, value)
 {
-    var lb = 0;
-    var ub = elements.length-1;
+    var lowerBound = 0;
+    var upperBound = elements.length-1;
     var mid;
-    while(lb<=ub)    //we should stop the loop once lb and ub pointers cross each other.
+    while(lowerBound<=upperBound)    //we should stop the loop once lb and ub pointers cross each other.
     {
-        mid = Math.floor((lb+ub)/2);  //when we perform division operation we will get decimal values. so we should use ceil() or floor() methods.
-        if(elements[mid] === val)
+        mid = Math.floor((lowerBound+upperBound)/2);  //when we perform division operation we will get decimal values. so we should use ceil() or floor() methods.
+        if(elements[mid] === value)
         {
-            console.log(`${val} is found at index ${mid}`);   //Once you found the value you should get out of the loop otherwise it goes to infinite.
+            console.log(`${value} is found at index ${mid}`);   //Once you found the value you should get out of the loop otherwise it goes to infinite.
             return;
         }
-        else if(val <= elements[mid])
+        else if(value <= elements[mid])
         {
-            ub=mid-1;  //target value is on left half.
+            upperBound=mid-1;  //target value is on left half.
         }
         else
         {
-            lb=mid+1;  //target value is on right half.
+            lowerBound=mid+1;  //target value is on right half.
         }
     }
-    console.log(`${val} is not found...`);
+    console.log(`${value} is not found...`);
 }
 const elements = [10,20,25,30,45,50,68,79,90];
 bsearch(elements, 45);

@@ -1,9 +1,9 @@
 const details = {
-    "SaiKiran" : 65,
+    "SaiKiran" : 100,
     "Santosh" : 75,
     "Hemanth" : 50,
     "Samiksha" : 80,
-    "MadhuVarun" : 95
+    "MadhuVarun" : 100
 }
 
 //get the keys of object using Object.keys() method and iterate through the keys. check the marks using keys.

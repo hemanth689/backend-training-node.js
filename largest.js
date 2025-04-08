@@ -3,29 +3,24 @@ const value2 = 51;
 const value3 = 49;
 const value4 = -65;
 const value5 = 52;
+let largest = value1;
 
-if(value1>=value2 && value1>=value3 && value1>=value4 && value1>=value5)
+if(value2>=largest)
 {
-    alert(`${value1} is the largest number`);
-    //console.log(`${a} is the largest number`);
+    largest = value2;
 }
-else if(value2>=value3 && value2>=value4 && value2>=value5)
+if(value3>=largest)
 {
-    alert(`${value2} is the largest number`);
-    //console.log(`${b} is the largest number`);
+    largest = value3;
 }
-else if(value3>=value4 && value3>=value5)
+if(value4>=largest)
 {
-    alert(`${value3} is the largest number`);
-    //console.log(`${c} is the largest number`);
+    largest = value4;
 }
-else if(value4>=value5)
+if(value5>=largest)
 {
-    alert(`${value4} is the largest number`);
-    //console.log(`${d} is the largest number`);
+   largest = value5;
 }
-else
-{
-    alert(`${value5} is the largest number`);
-    //console.log(`${e} is the largest number`);
-}
+
+//console.log(`largest value is ${largest}`);
+alert(`largest value is ${largest}`);

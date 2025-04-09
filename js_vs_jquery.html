@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript vs jQuery Example</title>
+  <!-- jQuery Library from CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Finding HTML Elements by ID</h2>
+
+<!-- These paragraphs have unique IDs -->
+<p id="id1">Hello World!</p>
+<p id="id2">Hello Hello!</p>
+<p id="id3">Hello Bye!</p>
+
+<!-- Displaying outputs -->
+<p><strong>jQuery Output:</strong></p>
+<p id="demo"></p>
+
+<p><strong>JavaScript Output:</strong></p>
+<p id="demo1"></p>
+
+<h2>Finding HTML Elements by Tag Name</h2>
+
+<!-- Generic paragraph tags -->
+<p>Hello World!</p>
+<p>Hello India!</p>
+<p>Hello Bangalore!</p>
+
+<p><strong>jQuery Output:</strong></p>
+<p id="demo2"></p>
+
+<p><strong>JavaScript Output:</strong></p>
+<p id="demo3"></p>
+
+<h2>Finding HTML Elements by Class Name</h2>
+
+<!-- Paragraphs with the same class name -->
+<p class="greet">Hello World!</p>
+<p class="greet">Hello India!</p>
+<p class="greet">Hello Bangalore!</p>
+
+<p><strong>jQuery Output:</strong></p>
+<p id="demo5"></p>
+
+<p><strong>JavaScript Output:</strong></p>
+<p id="demo6"></p>
+
+<script>
+  // --- By ID ---
+
+  // JavaScript: get element by ID and read its content
+  const myElement = document.getElementById("id1");
+  document.getElementById("demo1").innerHTML = "The text from id1 is: " + myElement.innerHTML;
+
+  // jQuery: select element by ID and get its text
+  $(document).ready(function() {
+    const myElements = $("#id1"); // jQuery ID selector
+    $("#demo").text("The text from id1 is: " + myElements.text());
+  });
+
+  // --- By Tag Name ---
+
+  // jQuery: select all <p> tags, get the first one using .eq(0), and display its text
+  $(document).ready(function() {
+    const mytag = $("p");
+    $("#demo2").text("The text of the first <p> tag is: " + mytag.eq(0).text());
+  });
+
+  // JavaScript: get all <p> elements, access the first one [0], and display its content
+  const allPs = document.getElementsByTagName("p");
+  document.getElementById("demo3").innerHTML = "The text of the first <p> tag is: " + allPs[0].innerHTML;
+
+  // --- By Class Name ---
+
+  // jQuery: select elements by class, get first one [0], and show content
+  $(document).ready(function() {
+    const myElements = $(".greet");
+    $("#demo5").text("The first paragraph with class='greet' is: " + myElements[0].innerHTML);
+  });
+
+  // JavaScript: get elements by class name and access the first one
+  const classElements = document.getElementsByClassName("greet");
+  document.getElementById("demo6").innerHTML = "The first paragraph with class='greet' is: " + classElements[0].innerHTML;
+</script>
+
+</body>
+</html>

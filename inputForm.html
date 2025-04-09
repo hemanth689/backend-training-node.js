@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store and Retrieve User Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-left: 200px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 30%;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        div1{
+            width: 60%;
+            height:auto;
+        }
+        .output {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Input Form</h1>
+
+    <div class="div1">
+        <label for="uname">User Name:</label><br>
+        <input type="text" id="uname" placeholder="user name"><br>
+
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" placeholder="first name"><br>
+
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" placeholder="last name"><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" placeholder="address"><br>
+
+        <!-- When we click on store data button it actually calls the storeRecord() function to store the data into the localStorage. -->
+        <button onclick="storeRecord()">Store Data</button>
+
+        <!-- when we click on retrieve button it calls the retrieveRecord() function to display the details. -->
+        <button onclick="retrieveRecord()">Retrieve Data</button>
+    <div class="output" id="output"></div>
+    </div>
+    <script src="inputForm.js"></script>
+
+</body>
+</html>

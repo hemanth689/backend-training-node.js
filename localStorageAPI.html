@@ -1,0 +1,30 @@
+<!-- 
+    localStorage API is used to store the data. The data will not be deleted even if the browser is closed.
+    And also data will be available for days, weeks and years.
+    setItem method is used to set the value, here name is reference.
+    If we want to display the data in the localStorage use getItem(reference).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage API</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+        localStorage.setItem("fname","Hemanth");
+        localStorage.setItem("lname", "Kumar");
+        localStorage.setItem("age", 21);
+        localStorage.setItem("address", "Bangalore");
+        document.getElementById("demo1").innerHTML = localStorage.getItem("fname");
+        document.getElementById("demo2").innerHTML = localStorage.getItem("lname");
+        document.getElementById("demo3").innerHTML = localStorage.getItem("age");
+        document.getElementById("demo4").innerHTML = localStorage.getItem("address");
+    </script>
+</body>
+</html>

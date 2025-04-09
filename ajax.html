@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX HTTP Request</title>
+    <style>
+        #demo{
+            width: 50%;
+            height: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo" >
+        <p>Give me the description of AJAX</p>
+        <button type="button" onclick="loadData()">clickToView</button>
+    </div>
+    <script>
+        function loadData() {
+        const request = new XMLHttpRequest();       //creating a object
+        request.onload = function() {               //this is a callback function which is executed when the response is ready.
+            document.getElementById("demo").innerHTML = this.responseText;      //adding the data from ajax.txt file
+        }
+        //inorder to send the request we have to use open() and send() method.
+        request.open("GET", "ajax.txt");
+        request.send();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!--GeoLocation API is used to get the coordinates of user-->
+<!--We will get the coordinated if only the user gives the permission-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation API</title>
+</head>
+<body>
+    <h1>GeoLocation API</h1>
+    <p>Get your coordinates by clicking the below button.</p>
+    <button onclick="getLocation()">locateMe</button>       <!--It will call getLocation() method when we click on the button-->
+    <p id="demo"></p>
+    <script>
+        const element = document.getElementById("demo");
+        //first we should check geolocation is supported or not. if it supports call getcurrentposition() method.
+        //otherwise pass some message. getcurrentposition() method calls the showposition() with coordinates.
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+                element.innerHTML = "Geolocation is not supported for this browser.";
+            }
+        }
+        //This function displays the coordinates of user.
+        function showPosition(position) {
+            element.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+</body>
+</html>

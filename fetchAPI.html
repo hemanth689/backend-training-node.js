@@ -14,7 +14,7 @@
     <h1>Fetching Data ....</h1>
     <div id="demo"></div>
     <script>
-        let totalData;
+        let totalData = "";             //without initialization we will get undefined.
         async function fetchData()
         {
             const data = await fetch("https://api.github.com/users/hadley/orgs");       //it will fetch the raw data.

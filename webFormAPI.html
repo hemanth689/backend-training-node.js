@@ -14,7 +14,7 @@
     <p>Enter some number and click on OK</p>
     <input id="id1" type="number" min="50" max="500" required>
     <button onclick="formAPI()">OK</button>
-    <p>If the input is less than 100 or greater than 300, error is displayed.</p>
+    <p>If the input is less than 50 or greater than 500, error is displayed.</p>
     <p id="demo"></p>
     <script>
         function formAPI() {
@@ -23,7 +23,7 @@
                 document.getElementById("demo").innerHTML = element.validationMessage;      //we assign validationMessage contains some msg if the validation is false.
             } else {
                 document.getElementById("demo").innerHTML = "Valid Input";      //we assign some msg if the validation is true.
-            } 
+            }
         }
     </script>
 </body>

@@ -14,9 +14,9 @@
         {
             //convert it into JS Object because everytime when we get the data from server it will be in string format.
             const data = JSON.parse(this.responseText);    
-            document.getElementById("demo").innerHTML = data.name+" "+data.age;
+            document.getElementById("demo").innerHTML = data[0].id+" "+data[0].name+" "+data[0].email;
         }
-        request.open("GET", "json.txt");
+        request.open("GET", "https://jsonplaceholder.typicode.com/users/" );
         request.send();
     </script>
 </body>

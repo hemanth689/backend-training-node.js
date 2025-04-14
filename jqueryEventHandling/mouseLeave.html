@@ -1,0 +1,22 @@
+<!-- mouseleave is similar to mouseenter event, it does when we remove a mouse pointer after putting on it, it will give some alert. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Event Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>If you put mouse pointer on me, I will give some alert</p>
+    <script>
+        $(document).ready(function()
+        {
+            $("p").mouseleave(function()
+            {
+                alert("Bye, You now leave sentence...")
+            })
+        });
+    </script>
+</body>
+</html>

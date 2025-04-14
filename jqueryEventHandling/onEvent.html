@@ -1,0 +1,31 @@
+<!-- 
+Inside on() method, we can include multiple event handlers. 
+It executes corresponding function when corresponding action is applied. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Event Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+   <p>I can change my color when you move the mouse or click on me.</p>
+    <script>
+       $(document).ready(function(){
+            $("p").on({
+            mouseenter: function(){
+                $(this).css("background-color", "lightgray");
+            },  
+            mouseleave: function(){
+                $(this).css("background-color", "lightblue");
+            }, 
+            click: function(){
+                $(this).css("background-color", "yellow");
+            }  
+            });
+        });
+    </script>
+</body>
+</html>

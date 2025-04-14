@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public IP Information</title>
+</head>
+<body>
+    <div>
+        <h2>Public IP Information</h2>
+        <p>Get Your IP Address</p>
+        <button onclick="getIpInfo()">Get</button><br><br>
+        <div id="result"></div>
+    </div>
+    <script>
+        //Javascript in the browser doesn't have direct access to IP addresses so we need this url
+        function getIpInfo()
+        {
+            fetch("https://api.ipify.org?format=json")      //this url gives your publc ip address.
+            .then(response => response.json())              //this one changes into json format.
+            .then(data => 
+                {
+                    document.getElementById("result").innerHTML = data.ip;          //it return object we need value.
+                })
+            .catch(err => 
+                {
+                    document.getElementById("result").innerHTML = err;      //if we get any error while accessing we will get one error message.
+                })
+        }
+    </script>
+</body>
+</html>

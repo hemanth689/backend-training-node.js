@@ -1,0 +1,30 @@
+<!-- 
+focus is executed when the form field gets focus which means 
+while entering some data into that field and remaining all fields are loses focus. 
+blur is executed when the form field loses focus.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Event Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
+    <script>
+        $(document).ready(function()
+        {
+            $("input").focus(function()
+            {
+                $(this).css("background-color", "orange");
+            });
+            $("input").blur(function(){
+                $(this).css("background-color", "green");
+            });
+        });
+    </script>
+</body>
+</html>

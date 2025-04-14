@@ -1,0 +1,50 @@
+<!-- 
+
+Syntax:
+- JavaScript uses more lines and looks a bit longer.
+- jQuery is shorter and easier to write.
+
+Setup:
+- In JavaScript, we directly access the element and add an event.
+- In jQuery, we use a $ selector and attach the event in one line.
+
+DOM Ready:
+- In JavaScript, we usually write scripts at the end or use DOMContentLoaded.
+- jQuery has a ready() function built-in to wait for the page to load.
+
+Performance:
+- JavaScript is native and faster.
+- jQuery is slightly slower because it does extra things in the background.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS And jQuery Event Handling</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- For JavaScript -->
+    <button id="jsInput">clickJS</button>
+    <p id="jsOutput"></p>
+    <!-- For JQuery -->
+    <button id="jqInput">clickJQ</button>
+    <p id="jqOutput"></p>
+
+    <script>
+        //JavaScript Event Handler
+        document.getElementById("jsInput").addEventListener('click', function(){
+            document.getElementById("jsOutput").innerHTML = "Hello, this is JavaScript Event Handler";
+        })
+        //JQuery Event Handler
+        $(document).ready(function() {
+            $("#jqInput").click(function() {
+                $("#jqOutput").text("Hello, this is JQuery Event Handler");
+            });
+        });
+    </script>
+</body>
+</html>

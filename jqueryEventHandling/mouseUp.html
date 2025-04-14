@@ -1,0 +1,22 @@
+<!-- This event does when we released the left, right or middle buttons of mouse, it will display some message. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Event Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>If you put mouse pointer on me, I will give some alert</p>
+    <script>
+        $(document).ready(function()
+        {
+            $("p").mouseup(function()
+            {
+                alert("Bye, You mouse up over p!")
+            })
+        });
+    </script>
+</body>
+</html>

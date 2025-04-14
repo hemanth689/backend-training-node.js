@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Search Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { padding: 8px; width: 300px; margin-bottom: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+
+  <h2>User Search</h2>
+
+  <input type="text" id="searchInput" placeholder="Search by name or email..." />
+
+  <div id="searchData"></div>
+
+  <script>
+    //Static users data
+    const usersData = {
+      "users": [
+        {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+        {"name":"Bob", "email":"bob32@gmail.com"},
+        {"name":"Jai", "email":"jai87@gmail.com"},
+        {"name":"Shien", "email":"shein@gmail.com"},
+        {"name":"Anax", "email":"anax95@gmail.com"}
+      ]
+    };
+
+    //searching for data...
+    document.getElementById("searchInput").addEventListener("input", function() {
+        //convert the input into lowercase
+        const query = this.value.toLowerCase();
+        if(query.length > 2)
+        {
+            const filteredUsers = usersData.users.filter(user => {
+                return user.name.toLowerCase().includes(query) ||
+                user.email.toLowerCase().includes(query)                //filters the data from name and email.
+            });
+            showResults(filteredUsers);     //passing results to showResults function to display in table.
+        }
+        else
+        {
+            //if we don't found anything
+            document.getElementById("searchData").innerHTML = "";
+        }
+    });
+
+    function showResults(users)
+    {
+        if(users.length === 0)
+        {
+            document.getElementById("searchData").innerHTML = '<p>No results found</p>';
+            return;         //it skips the below statements because we don't found any such records.
+        }
+        //creating a table to display.
+        let tableData = 
+        `<table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>`;
+        users.forEach(user => {
+            tableData += 
+            `<tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+            </tr>`;
+        });
+        tableData += `</table>`;        //At the end we should close the table tag.
+
+        document.getElementById("searchData").innerHTML = tableData;
+    }
+  </script>
+
+</body>
+</html>

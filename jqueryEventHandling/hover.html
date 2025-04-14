@@ -1,0 +1,28 @@
+<!-- 
+hover is the combination of mouseenter and mouseleave events. 
+first function is executes when mouse enter the html element and second function executes when mouse leaves the html element. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Event Handling</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>If you put mouse pointer on me, I will give some alert</p>
+    <script>
+        $(document).ready(function()
+        {
+            $("p").hover(function()
+            {
+                alert("You entered p!")
+            },
+            function(){
+                alert("Bye, You now leave p!")
+            });
+        });
+    </script>
+</body>
+</html>

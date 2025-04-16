@@ -1,0 +1,17 @@
+-> API stands for Application Programming Interface.
+-> It acts like a bridge or a messenger between two different systems usually between the frontend and the backend.
+
+What is the need of an API?
+
+-> The frontend (what we see) can’t directly talk to the database or server.
+-> So, we need an API to help the frontend to send a request to the backend and get the response back.
+-> API allows safe and organized communication between client and server.
+-> It helps in sending and receiving data easily, like user info, products, posts, etc.
+
+Example:
+
+-> When you log in to a website:
+-> You type your username and password on webpage.
+-> That data is sent to the backend through the API.
+-> Backend checks it and sends a response like “Login successful”.
+-> This response shows you on frontend.

@@ -1,0 +1,16 @@
+-> Node.js is a tool that runs JavaScript outside the browser, It is on the server side.
+-> generally, JavaScript runs in the browser (like Chrome, Firefox), but with Node.js, 
+we can use JavaScript to build the backend of websites or apps.
+
+Why Do We Use Node.js?
+
+-> To write backend code using JavaScript.
+-> To connect with databases, handle APIs, and build servers.
+-> It is very fast and handles many users at once without crashing.
+
+-> Node.js uses JavaScript for backend development.
+-> Instead of using different languages for frontend and backend, we can use just JavaScript language for both.
+
+-> It is used for real-time apps like chat apps, APIs, or streaming services.
+
+-> So when one user sends a message, Node.js quickly handles it and sends it to the other person in real time.

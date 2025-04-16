@@ -1,0 +1,18 @@
+-> REST stands for Representational State Transfer.
+-> REST is just a set of rules or guidelines that helps in building APIs in a proper way.
+-> It tells us how the frontend and backend should communicate with each other 
+-> using simple URLs and common methods like GET, POST, PUT, and DELETE.
+
+REST uses simple HTTP methods like:
+
+GET – It is used to get the data from server
+POST – It is used to create a new data in server
+PUT – It is used to update or replace the particular in server
+DELETE – It is used to delete a particular data from server
+
+Real life Example(Instagram)
+
+You can view your profile of Instagram by clicking on profile, but it internally use GET.
+You can update your profile by using edit option on Instagram, but it internally uses PUT.
+You can create a new post by using create a new post option, but it internally uses POST.
+You can delete your post by using delete post option, but it internally uses DELETE.

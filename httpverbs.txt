@@ -1,0 +1,27 @@
+-> When we want to communicate with the server using web browser or API's, we use Http methods 
+also called as Http Verbs to tell the server what actions we want to perform on the data.
+-> These are similar to commands like crud operations like create, read, update and delete.
+-> There are 4 major Http Verbs - GET, POST, PUT, DELETE.
+
+GET :
+-> GET is used to retrieve data from the server.
+-> It does not change anything, it just asks the server to send some data.
+-> Safe to use multiple times — doesn't affect the server.
+-> Example: Displaying a list of products, viewing a blog post, etc.
+
+POST :
+-> POST is used to send data to the server to create new data in server.
+-> It Often used when submitting forms, registering users, posting comments, etc.
+-> Data is sent in the body of the request. POST is an unsafe method.
+-> It is not idempotent which means if we send this request multiple times it creates multiple records with the same data.
+
+PUT :
+-> PUT is used to update or completely replace a data and PUT is an unsafe method.
+-> You must send the entire updated data, not just a part of it.
+-> It is Idempotent which means if we send this request multiple times it doesn't change the result in server.
+
+DELETE :
+-> DELETE is used to remove the data from server. It is an unsafe method.
+-> It usually used to delete records, users, posts etc.
+-> It is Idempotent which means if we send delete request multiple times then it doesn't affect the server.
+-> Because there is only one record with that id so it doesn't affect.

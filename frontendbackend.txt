@@ -1,0 +1,22 @@
+Frontend (Client Side)
+
+-> Frontend is the part of the website or app that we see and interact with directly.
+-> It includes things like buttons, text, images, forms, layouts, etc.
+-> Whatever we click, scroll, or type into — these are all frontend.
+-> It's built using languages like HTML, CSS, and JavaScript.
+-> Frontend runs in the browser. Frontend is what the user sees.
+
+Example:
+When you visit Amazon, the product listings, search bar, cart icon — all these are frontend.
+
+Backend (Server Side)
+
+-> Backend is the part of the app that runs behind the scenes.
+-> It handles the logic, stores the data, talks to databases, and sends responses to the frontend.
+-> Users can’t see the backend, but it powers everything.
+-> It’s built using languages like Node.js, Python, Java, and uses databases like MySQL or MongoDB.
+-> Backend runs on the server. Backend is how everything works behind the scenes.
+
+Example:
+When you log into any website or app, the backend checks if your username and password are correct or not.
+if it is correct then it goes to forward otherwise it gives some error message.

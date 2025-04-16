@@ -1,0 +1,55 @@
+<!-- 
+Session Storage:
+- It is temporary storage that will be available as long as the browser is open.
+- Once you close the browser, the data will be deleted.
+- It’s used for short-term data.
+
+Cookie:
+- Cookies are small pieces of data that are stored on the browser.
+- The data can be attached with some expiry date, till then the data is available and we can set expiry date.
+- Cookies are often used for remembering login sessions or saving preferences.
+
+Local Storage:
+- Local Storage is similar to Session Storage but the data will be availbale even after we closes the browser.
+- Data is available till the user clears manually.
+- It’s useful for saving user preferences, settings, or caching data for faster access.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie</title>
+</head>
+<body>
+    <script>
+        //for setting the cookie
+        setCookie("name", "Hemanth", 365);
+        setCookie("email", "hemanth@gmail.com", 365);
+
+        //for displaying all cookies once
+        getCookie();
+
+        function setCookie(key, value, daysToLive)
+        {
+            const date = new Date();
+            //This will calculate the expiration date adding current time in ms to it.
+            date.setTime(date.getTime() + (daysToLive * 24 * 60 * 60 * 1000));
+            let expires = 'expires=' + date.toUTCString();
+            document.cookie = `${key}=${value};${expires};`;
+        }
+        function getCookie()
+        {
+            console.log(document.cookie);
+        }
+        function deleteCookie(key)
+        {
+            setCookie(key, null, null);
+        }
+        
+        //for deleting the cookie
+        deleteCookie("email")
+    </script>
+</body>
+</html>

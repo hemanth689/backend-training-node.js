@@ -30,3 +30,14 @@ new Promise(function (resolve, reject) {
         console.log(res);
     }, 0);
 });
+
+/*
+    output:
+    
+    promise 2
+    setTimeout 1
+    promise 1
+    setTimeout 2
+    dot then 1
+    resolve 1
+*/

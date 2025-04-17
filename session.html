@@ -1,0 +1,42 @@
+<!-- 
+Session Storage:
+- It is temporary storage that will be available as long as the browser is open.
+- Once you close the browser, the data will be deleted.
+- It’s used for short-term data. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <h3>Enter your details:</h3>
+
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" placeholder="Enter first name"><br><br>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" placeholder="Enter last name"><br><br>
+
+    <button onclick="saveData()">Save Data</button><br>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    
+    <script>
+        function saveData()
+        {
+            const fname = document.getElementById("fname").value;
+            const lname = document.getElementById("lname").value;
+            //storing data
+            sessionStorage.setItem("fname",fname);
+            sessionStorage.setItem("lname", lname);
+            //Accessing the data
+            document.getElementById("demo1").innerHTML = sessionStorage.getItem("fname");
+            document.getElementById("demo2").innerHTML = sessionStorage.getItem("lname");
+        }
+    </script>
+</body>
+</html>

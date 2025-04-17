@@ -1,6 +1,6 @@
 /*
     Flow of the below code:
-    -> first it checks for synchronous code, no synchronous code in this case.
+    -> first it checks for synchronous code, here first it logs "begins".
     -> so it checks from first setTimeout goes to web api's environment attached with 5 sec.
     -> After that it checks the promise so it executes immediately and logs the "promise 2".
     -> inside we have another setTimeout it goes to web api's attached with 8 sec.
@@ -11,6 +11,7 @@
     -> It executes .then() and it logs the "dot then 1".
     -> Inside this we have another setTimeout with 0 sec so after completion of 0 seconds it logs the "resolve 1"
 */
+console.log("begins");
 setTimeout(() => {
     console.log("setTimeout 1");
     Promise.resolve().then(() => {
@@ -33,7 +34,8 @@ new Promise(function (resolve, reject) {
 
 /*
     output:
-    
+
+    begins
     promise 2
     setTimeout 1
     promise 1

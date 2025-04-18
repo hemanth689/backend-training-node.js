@@ -1,0 +1,20 @@
+{
+  "name": "day9",
+  "version": "1.0.0",
+  "description": "small nodeJS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/grepruby/freshers-training/sb-team/training-2025/hemanth-kumar-bangi/backend.git"
+  },
+  "author": "Hemanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/grepruby/freshers-training/sb-team/training-2025/hemanth-kumar-bangi/backend/issues"
+  },
+  "homepage": "https://gitlab.com/grepruby/freshers-training/sb-team/training-2025/hemanth-kumar-bangi/backend#readme",
+  "keywords": []
+}

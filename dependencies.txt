@@ -1,0 +1,45 @@
+-> Dependencies are the external libraries or packages that are used for the Node.js project to work.
+-> for example if the project needs to send a mails, so it needs external package called as nodemailer.
+-> And this package becomes a dependency for this project, without this we can't achieve this property.
+-> They are usually installed with npm (node package manager) and once installed they are listed in the
+package.json file under dependencies.
+
+Intializing the NodeJs Project :
+
+Before installing the npm, we have to initialze the npm using below command.
+
+npm init       
+
+After executing the above command, it asks some questions like 
+what is the project name
+what is the version
+what is the author name etc.,
+
+If we skip any answer it considered as default value. After answering all the questions.
+It creates one package.json file which contains the data which we have answered for the questions.
+If we want to create default package.json file without answering any questions, we can directly use below command
+
+npm init -y (or) --yes
+
+To install packages we need to use below commands.
+
+npm install
+
+It create package.json file with all default values.
+we can also sets default values for email, author name, and license.
+
+npm set init.author.email "hemanth@gmail.com"
+npm set init.author.name "Hemanth"
+npm set init.license "Apache"
+
+we can install third party packages using below commands.
+
+npm install <package-name> --save-dev
+npm install <package-name> --save
+
+--save flag is used to store the dependencies required for running the nodeJs project.
+--save-dev flag is used to stores dependencies in the devDependencies section mostly used for testing.
+
+After installing the npm, we have two files called as package.json and package-lock.json files.
+package.json file created when we initialize the npm. It includes what packages are required for your project.
+package-lock.json created when we install the npm and It locks the exact versions.

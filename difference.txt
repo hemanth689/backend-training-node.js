@@ -1,0 +1,35 @@
+package.json vs package-lock.json:
+
+package.json:
+-> This file is like project's manifest.
+-> It lists the project's metadata which consists of name, version, description etc.
+-> It declares the dependencies which are required for the project.
+-> It specifies version ranges like ^4.18.2 which means from 4.18.3 to 4.99.99 but not beyond 5.0.0 (including 5 also).
+-> This file is generated when we initialize the npm using the command as npm init.
+
+package-lock.json:
+-> This file locks down the exact versions of every dependency.
+-> It installs the all the dependencies with exact versions.
+-> we cannot edit this file manually like as package.json file.
+-> This file is generated while we are installing the npm using the command as npm install.
+
+POST vs PUT vs PATCH
+
+POST:
+-> It is used to create new resource into server.
+-> It is not a Idempotent which means when we will post similar data multiple times then it will create multiple duplicates.
+-> There is risk of overwriting the data while using POST.
+-> The status code is 201 which means created.
+
+PUT:
+-> It is used to updata the resource in server.
+-> It is an Idempotent which means when we will put operation with similar data multiple times then will not effect on the result,
+Because there is only one resource in server and it is updated at first time itself.
+-> There is a high chance overwriting the data while using PUT.
+-> while using this we have to send full data including changing data.
+
+PATCH:
+-> It is also used for updating the resource in server.
+-> It is also an Idempotent same as PUT.
+-> There is a low chance of overwriting the data while using PATCH.
+-> while using this we can send only specific data not all fields of data which means pass only changing data.

@@ -41,6 +41,13 @@ app.get('/users/:id', (req, res) => {
 app.post('/users', (req, res) => {
     //It will return all the data from client requested url by using req.body.
     const newItem = req.body;
+    //Check If the same user name exists or not (It will apply for same name with different case as well).
+    const duplicate = users.find(user => user.name.toLowerCase() === newItem.name.toLowerCase());
+    if(duplicate)
+    {
+        //It will stop here only otherwise it will add the duplicate user without return.
+        return res.status(400).send('User already exists, please add different user');
+    }
     //And adding id to newItem
     newItem.id = users.length + 1;
     //It will add into users array.
@@ -57,9 +64,18 @@ app.put('/users/:id', (req, res) => {
     //checking whether the itemIndex value is valid or not.
     if(itemIndex !== -1)
     {
-        //This will replace all the data with req.body data in client request.
-        users[itemIndex] = {id:index, ...req.body};
-        res.status(200).json({ message : 'User updated successfully' });
+        //getting all fields of data from request.
+        const {name, city, education} = req.body;
+        //Check whether request has valid data in all the fields, otherwise send some message.
+        if(name !== undefined && city !== undefined && education !== undefined) {
+            //This will replace all the data with req.body data in client request.
+            users[itemIndex] = {id:index, ...req.body};
+            res.status(200).json({ message : 'User updated successfully' });
+        }
+        else
+        {
+            res.status(400).send('All the fields are required to update');
+        }
     }
     else
     {

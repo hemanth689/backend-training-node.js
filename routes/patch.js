@@ -7,12 +7,12 @@ router.patch('/items/:id', (req, res) => {
     const { id } = req.params;
     const { name, city } = req.body;
     //If the client requesting to change only the name using patch.
-    if(name !== undefined)
+    if(name !== undefined && city === undefined)
     {
         res.status(200).send(`Updated a particular id : ${id} record in server with name : ${name} only`);
     }
     //If the client is requesting to change the city only
-    else if(city !== undefined)
+    else if(city !== undefined && name === undefined)
     {
         res.status(200).send(`Updated a particular id : ${id} record in server with city : ${city} only`);
        

@@ -1,0 +1,19 @@
+# Ignore node_modules to avoid uploading huge dependencies
+node_modules/
+
+# Ignore environment variables (secrets)
+.env
+
+# Ignore logs
+*.log
+
+# Ignore build output (optional if you compile)
+dist/
+build/
+
+
+
+# node_modules/ → Can be recreated anytime by npm install.
+# .env → Contains secrets like database passwords or API keys.
+# *.log → Log files are generated during runtime or errors — no need to track them.
+# dist/ and build/ → If you are using tools that generate production files (like Webpack, TypeScript, etc.), these folders are auto-generated.

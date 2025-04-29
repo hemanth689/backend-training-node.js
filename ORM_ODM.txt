@@ -1,0 +1,36 @@
+When we use a database, we usually have to write SQL queries or complex commands to get or change the data. 
+This can be confusing and slow, especially in big projects. That's where ORM and ODM come into picture.
+
+Object Relational Mapping (ORM):
+
+-> It is used with Relational Databases (SQL).
+-> It connects your code (objects) with your database tables.
+-> we don’t need to write SQL manually.
+-> we work with classes and objects in your code, and the ORM handles the database stuff for us.
+
+Example :
+Instead of writing like
+SELECT * FROM users WHERE id = 1;
+
+we can just write in our code as
+User.findByPk(1);
+
+-> ORM can handles the SQL for us. Some of the popular ORM tools are like 
+-> Sequelize for Node.js.
+-> Hibernate for Java.
+-> Django ORM for Python.
+
+Object Document Mapping (ODM):
+
+-> It is used with NoSQL Databases, especially MongoDB.
+-> It is similar to ORM, but works with documents (not tables).
+-> we can deal with objects in your code, and the ODM translates that to MongoDB documents.
+
+Example:
+Instead of writing a MongoDB query:
+db.users.find({ name: "John" });
+
+we can write like as:
+User.find({ name: "John" });
+
+-> popular tools for ODM are Mongoose for MongoDB in Node.js and Doctrine MongoDB ODM in PHP.

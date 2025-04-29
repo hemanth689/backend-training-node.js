@@ -1,0 +1,26 @@
+A database is like a digital storage room where we keep all our data in an organized way so that it’s easy to find, use, change, and manage whenever we need.
+It is like a spreadsheet, but way more powerful and meant for apps or websites. You can store different types of data like:
+A database is where apps store their data safely. ORM and ODM are tools that make it easier to talk to the database from code. 
+ORM is for SQL databases (tables), and ODM is for NoSQL databases (like MongoDB). 
+They save us from writing complicated queries by letting us use regular code objects.
+
+-> Users (name, email, password)
+-> Products (title, price, stock)
+-> Orders (date, items, total_cost)
+
+There are two main types of Databases:
+-> Relational Database
+-> Non-Relational Database.
+
+Relational Database (SQL):
+-> Stores data in tables (like Excel sheets).
+-> Tables have rows (data) and columns (fields).
+-> we use a language called SQL to interact with it.
+Examples: MySQL, PostgreSQL, SQLite.
+
+Non-Relational Database (NoSQL):
+
+-> Stores data in collections (like folders) and documents (like JSON files).
+-> Very flexible structure.
+-> Great for apps that need fast changes or don't fit neatly into tables.
+Examples: MongoDB, Firebase, CouchDB.

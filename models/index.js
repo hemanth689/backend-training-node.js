@@ -1,43 +1,44 @@
-'use strict';
+// models/index.js
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const process = require('process');
-const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+dotenv.config();
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+// Get __dirname in ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-fs
-  .readdirSync(__dirname)
-  .filter(file => {
-    return (
-      file.indexOf('.') !== 0 &&
-      file !== basename &&
-      file.slice(-3) === '.js' &&
-      file.indexOf('.test.js') === -1
-    );
-  })
-  .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
+// Initialize Sequelize instance
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USERNAME,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    dialect: 'postgres',
+    logging: false
   }
-});
+);
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+// Dynamically import all models
+const models = {};
 
-module.exports = db;
+export async function loadModels() {
+  const files = fs.readdirSync(__dirname);
+
+  for (const file of files) {
+    if (
+      file !== 'index.js' &&
+      file.endsWith('.js')
+    ) {
+      const { default: defineModel } = await import(path.join(__dirname, file));
+      const model = defineModel(sequelize);
+      models[model.name] = model;
+    }
+  }
+
+  return { sequelize, models };
+}

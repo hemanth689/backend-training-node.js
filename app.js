@@ -1,14 +1,15 @@
+// app.js
 import express from 'express';
-import sequelize from './database.js';
+import { loadModels } from './models/index.js';
 import userRoutes from './routes/userRoutes.js';
-//import User from './models/user.js';
 
 const app = express();
 app.use(express.json());
 
-app.use('/users', userRoutes);
+const { sequelize, models } = await loadModels();
+app.use('/users', userRoutes(models));
 
-// Sync database
+//Sync the database
 sequelize.sync({ force: false }).then(() => {
   console.log('Database synced');
   const port = 3000;

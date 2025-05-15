@@ -1,0 +1,25 @@
+{
+  "name": "day14",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/grepruby/freshers-training/sb-team/training-2025/hemanth-kumar-bangi/backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/grepruby/freshers-training/sb-team/training-2025/hemanth-kumar-bangi/backend/issues"
+  },
+  "homepage": "https://gitlab.com/grepruby/freshers-training/sb-team/training-2025/hemanth-kumar-bangi/backend#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}

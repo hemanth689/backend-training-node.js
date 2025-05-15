@@ -12,4 +12,4 @@ const logger = (req, res, next) => {
     next(); // Pass control to the next middleware/route handler
 };
 
-module.exports = logger;
+export default logger;

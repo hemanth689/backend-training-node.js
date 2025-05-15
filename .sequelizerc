@@ -1,0 +1,25 @@
+// .sequelizerc (JavaScript file in your project root)
+/*
+    The .sequelizerc file is a configuration file that tells the Sequelize CLI where to find key folders like:
+    config – your DB settings (like config.js or config.json)
+    models – your Sequelize models
+    migrations – your migration files
+    seeders – your seed files
+    -> By default the sequelize-cli assumes the project structure like below
+    project/
+    ├── config/
+    │   └── config.js or config.json
+    ├── models/
+    ├── migrations/
+    ├── seeders/
+    
+    -> In case if we use different project structure sequelize-cli won't find the files unless we specify .sequelizerc file.
+*/
+const path = require('path');
+
+module.exports = {
+    'config': path.resolve('Migrations/config/config.json'),
+    'migrations-path': path.resolve('Migrations/migrations'),
+    'seeders-path': path.resolve('Migrations/seeders'),
+    'models-path': path.resolve('Migrations/models')
+};

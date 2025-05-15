@@ -1,0 +1,42 @@
+-> Migrations in sequelize is a version controlled way to change our database schema like creating tables, 
+adding columns or modifying data types.
+-> we can use migrations to keep track of changes to the database. 
+-> With migrations we can transfer our existing database into another state and vice versa.
+-> Those state transitions are saved in migration files, which describe how to get to the new state.
+and how to revert the changes in order to get back to the old state.
+-> Migration in sequelize is JS file which exports two functions i.e. up and down.
+-> These functions dictates that how to perform migrations and undo it.
+-> we can define these functions manually, but we can't call these functions manually.
+-> These will be called automatically by CLI depending on the command.
+
+To install sequelize CLI:
+npm install --save-dev sequelize-cli
+
+To create an empty project we need to execute init command:
+npx sequelize-cli init
+
+This will create following folders like
+    config - contains config file, which tells CLI how to connect with database
+    models - contains all models for our project
+    migrations - contains all migration files
+    seeders - contains all seed files
+
+-> sequelize CLI assumes mysql by default so we have to change to postgres in the dialect field.
+
+-> To create a model we will use model:generate command, it requires two options.
+    name: the name of the model.
+    attributes: the list of model attributes.
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+-> This will create model file user in models folder. And also creates migration file with name XXXXX-create-user.js in migrations folder.
+
+-> To create a table for user model we have to run this command:
+npx sequelize-cli db:migrate
+
+-> To undo this operation(most recent migration) we can use this command:
+npx sequelize-cli db:migrate:undo
+
+-> To undo all operation:
+npx sequelize-cli db:migrate:undo:all
+
+-> we can also revert back to a specific migration by passing its name with the --to option.
+npx sequelize-cli db:migrate:undo:all --to XXXXX-create-posts.js

@@ -1,0 +1,70 @@
+-> seed file is like a JavaScript file which helps to insert some data into database tables by default.
+-> we can use seeders to manage all data migrations.
+-> It is also follows the same structures as migrations which exports up and down functions.
+-> The up() function is used to insert data into the table, and the down() function is used to remove (undo) that data.
+
+npx sequelize-cli seed:generate --name demo-user
+-> This command will create a seed file in seeders folder. And file name like XXXXX-demo-user.js.
+
+-> we can use seeders to add demo users, Insert default roles, settings, or initial app data.
+-> Now we should edit this file to insert demo user to User table.
+
+demo_user.js:
+
+'use strict';
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert('Users', [
+      {
+        name: 'Alice',
+        city: 'Hyderabad',
+        education: 'B.Tech',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Bob',
+        city: 'Bangalore',
+        education: 'MCA',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    ]);
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    // This will delete all rows from Users table
+    return queryInterface.bulkDelete('Users', null, {});
+  }
+};
+
+-> bulkInsert — inserts multiple records into the specified table (Users)
+-> bulkDelete — deletes them (used for rollback)
+
+-> To run all the seed file use this command:
+npx sequelize-cli db:seed:all   (up)
+-> This will insert the demo user into user table.
+
+npx sequelize-cli db:seed:undo
+            (or)
+npx sequelize-cli db:seed:undo:all  (down)
+-> This will delete the data which has added in seed.
+
+-> seeders does not have any execution history by default unlike migrations uses sequelizeMeta.
+-> If we want to track seeders history, we have to mention some data in config/config.js or .sequelizerc.
+-> Add this part for seeder history tracking
+    seederStorage: 'sequelize',
+    seederStorageTableName: 'SequelizeData'
+
+-> seederStorage: 'sequelize' tells Sequelize to use the database for tracking seed history.
+-> seederStorageTableName: 'SequelizeData' is the name of the table where seeder history will be stored (we can change the name as well).
+
+-> If we wish to undo the most recent seed
+npx sequelize-cli db:seed:undo
+
+-> If we wish to undo a specific seed
+npx sequelize-cli db:seed:undo --seed name-of-seed-as-in-data
+
+-> If we wish to undo all seeds
+npx sequelize-cli db:seed:undo:all

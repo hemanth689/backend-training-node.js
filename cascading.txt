@@ -1,0 +1,13 @@
+-> Cascading Deletion:
+-> When we delete a parent record, like a customer, we also want to automatically delete all related records, like that customer's orders.
+-> This helps keep the database clean, so there are no orphaned or leftover records in the orders table that point to a deleted customer.
+-> Instead of manually deleting orders first, cascading delete handles it automatically when we delete the customer.
+-> Inorder to implement we have to put this option - OnDelete : 'CASCADE'
+-> we have to declare in association definitions typically in child models like 
+
+User.hasMany(Order, {
+  foreignKey: 'userId',
+  onDelete: 'CASCADE'
+});
+
+so this will do when user is deleted all the orders which that customer ordered will be deleted.

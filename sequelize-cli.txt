@@ -1,0 +1,9 @@
+-> sequelize-cli is development tool, but we do not typically use in production environments.
+-> sequelize-cli helps to generating models, running migrations, creating seeders and managing database schema.
+
+-> We don't use sequelize-cli in productions because:
+-> cli is a developer tool it's designed to be used by developers to generate models, migrations and seeders.
+-> In production our app already has all it's code and schema, so we shouldn't generate new things.
+-> sometimes it leads to security risks like data loss or data change.
+-> If someone accidentally runs db:seed and db:migrate:undo then it could leads to data loss and data change.
+-> In production migrations should be manually controlled via CI/CD audited scripts.

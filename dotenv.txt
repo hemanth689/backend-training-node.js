@@ -1,0 +1,16 @@
+-> dotenv loads secret or config values (like DB username/password) from a .env file instead of writing them in your code.
+-> This makes our code cleaner and more secure.
+-> we don't expose credentials directly in files like config.js or app.js.
+-> Inorder to implement this we need to install dotenv package
+command : npm install dotenv
+-> we have to create a file like .env and put all the credentials inside this.
+-> After that we have to import this .env file wherever we required.
+require('dotenv').config();
+        (or)
+import 'dotenv/config';
+
+-> we can access these credentials like below
+process.env.DB_NAME
+process.env.DB_USERNAME
+-> And also we have to make sure that don't push this file into gitlab.
+-> Inorder to achieve that put this file name into .gitignore file.

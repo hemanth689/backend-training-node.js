@@ -1,0 +1,20 @@
+-> obfuscation is the process of tranforming readable code into hard-to-understand format.
+-> It is used to protect from being easily reverse-engineered or copied.
+-> why we need to use obfuscation because:
+-> Javascript runs in the browser that means anyone can view our code using developer tools.
+-> obfuscation helps to prevent code theft or tampering.
+-> Protect sensitive logic (e.g., licensing checks, proprietary algorithms).
+-> Adds a layer of security.
+-> Never rely on obfuscation for security because it only slows down attackers.
+-> Don’t obfuscate in development, only in production builds.
+
+Tools:
+-> we can use online tools like https://obfuscator.io that don't needs to be installed in our system.
+-> we just paste our code and mark options like string encoding, self defending etc.
+-> click on obfuscate and copy the output.
+
+javascript-obfuscator:
+-> It is most popular and open source tool used for obfuscation.
+-> Install the tool : npm install --save-dev javascript-obfuscator.
+-> After installing, npx javascript-obfuscator input.js --output output.js run this command.
+-> This will transform the original code from input.js file into obfuscated code in output.js file.

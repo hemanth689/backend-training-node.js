@@ -1,0 +1,51 @@
+JWT (JSON Web Token) :
+
+    -> Stored on client-side (localStorage, cookies, etc.)
+    -> Stateless — no server memory needed to track user sessions
+    -> Scales easily across multiple servers (e.g., in microservices)
+    -> Requires secure storage and custom logic for logout/invalidation
+    -> Larger token size (contains payload, header, signature)
+    -> Expiration is managed using built-in exp field
+    -> Logout is harder — requires token blacklist or shorter lifespan
+    -> Best for APIs, mobile apps, and SPAs
+
+Session (Server-Side) :
+
+    -> Stored on server-side (in memory, database, or Redis)
+    -> Stateful — server must manage session data
+    -> Less scalable unless using a centralized session store (like Redis)
+    -> More secure by default — session ID is minimal and stored server-side
+    -> Smaller token size (usually just a session ID)
+    -> Expiration managed by server (e.g., timeout or max age)
+    -> Logout is easy — destroy the session on server
+    -> Best for traditional web apps with server-side rendering.
+
+JWT Flow:
+User logs in → server generates signed JWT → sends to client.
+Client stores JWT → sends it with each request.
+Server verifies JWT signature and extracts user info from payload.
+
+Session Flow:
+User logs in → server creates session in memory and returns a cookie with session ID.
+Client sends cookie automatically.
+Server looks up session ID in memory/database.
+
+Stateless:
+-> It doesn't store the data about the client between requests.
+-> Every time we must send all the neccessary information.
+-> JWT is stateless so for every request we should pass jwt token which contains all the user info.
+-> The server verifies the token on each request.
+
+Statefull:
+-> It will store the data about the clinet between requests.
+-> Server stores all the neccessary information about session.
+-> We can just use session id to log.
+
+Security(JWT):
+-> If someone steals the token, they can use it to impersonate the user.
+-> The server cannot kill the token, it has to either wait for the token to expire or check a blacklist.
+-> we must handle invalidation which means set the less Expiration time to limit the damage.
+
+Security(Session):
+-> It is more secure, the client doesn't see or store sensitive user data.
+-> If session is stolen then we can simply delete that session on the server to log the user out instantly.

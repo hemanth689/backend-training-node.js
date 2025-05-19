@@ -1,0 +1,78 @@
+-> UUID stands for Universal Unique Identifier which is 128 bit number.
+-> It is used to identify uniquely in systems. It represents in 36 character string
+-> example like 550e8400-e29b-41d4-a716-446655440000
+-> It will be useful when we are using unique identifiers in database applications.
+-> We can use this concept rather than keeping the id's like 1,2,3...
+-> It has different versions and each has different method of generation.
+-> Inorder to implement this we need to install the package using npm install uuid.
+
+Versions:
+UUID v1 – Time-Based
+    -> It will generated based on Timestamp and MAC address of the machine.
+    -> It is Time-ordered, useful for sorting.
+    Cons:
+    -> Can expose the MAC address (privacy concern).
+    -> Can be predictable.
+
+    Format: xxxxxxxx-xxxx-1xxx-xxxx-xxxxxxxxxxxx (note the 1 in the version section).
+    Example: 6ba7b810-9dad-11d1-80b4-00c04fd430c8
+
+UUID v2 – DCE Security (Time-Based + POSIX UID/GID)
+    -> It will be generated using Timestamp, MAC address and POSIX UID/GID.
+    -> POSIX UID/GID means adds user or group identifiers to tie the UUID to a specific operating system user or group.
+    -> This makes UUID slightly more secure.
+    -> we used in DCE (Distributed Computing Environment).
+    Cons:
+    -> we rarely used and poorly supported in most UUID libraries.
+
+    Format: xxxxxxxx-xxxx-2xxx-xxxx-xxxxxxxxxxxx
+
+UUID v3 – Name-Based (MD5 hash)
+    -> It will be generated using Namespace like DNS, URL and name like a string ("hemanth").
+    -> MD5 is cryptographic algorithm used to hash the UUID.
+    -> It will generate same UUID if the namespace and name are same. so it's deterministic.
+    -> MD5 is no longer secure for cryptographic uses like digital signatures, password hashing.
+    Cons:
+    -> Uses MD5 (less secure hash function).
+
+    Format: xxxxxxxx-xxxx-3xxx-xxxx-xxxxxxxxxxxx
+    Example: 6ba7b810-9dad-11d1-80b4-00c04fd430c8 (for DNS namespace)
+
+UUID v4 – Random
+    -> It will be generated using secure random or pseudo-random numbers.
+    -> It is simple and secure (if using a cryptographically secure RNG).
+    -> It has very low collision probability.
+    -> we can for General-purpose IDs (database keys, tokens).
+    Cons:
+    -> Not deterministic.
+
+    Format: xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx
+    Example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+
+UUID v5 – Name-Based (SHA-1 hash)
+    -> It will be generated using Namespace and name with SHA-1 cryptographic algorithm.
+    -> It is similar to version 3 and it is more secure than that.
+    -> we can use when v3’s MD5 isn’t acceptable.
+    -> It is Deterministic like v3 but with stronger hash.
+    -> It is preferred in new applications.
+    Cons:
+    -> SHA-1 is deprecated in some security contexts.
+
+    Format: xxxxxxxx-xxxx-5xxx-xxxx-xxxxxxxxxxxx
+    Example: 3bbcee75-cecc-5b56-8031-b6641c1ed1f1
+
+
+The general structure of a UUID is:
+    8-4-4-4-12 (hex characters)
+    xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx
+Where:
+-> M is the version (e.g., 1 for v1, 4 for v4, etc.)
+-> N is the variant (i.e., layout of the UUID) that means how the bits should be interpreted.
+
+-> if n is like 9, it's binary is 1001 so prefix is 10 so it's variant is 2.
+Variant     Binary_Prefix	        Description
+    0	        0xxx            Reserved (NCS compatibility — rarely used)
+    1	        10xx	        RFC 4122 / DCE 1.1 (most common)
+    2	        110x	        Reserved for Microsoft GUIDs
+    3	        111x	        Reserved for future use
+

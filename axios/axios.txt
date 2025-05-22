@@ -1,0 +1,38 @@
+-> In Node.js, Axios is a popular promise-based HTTP client.
+-> Which is used to make HTTP requests from both the browser and Node.js.
+-> It's often used to interact with APIs (e.g., RESTful services). 
+-> Axios makes it easy to send asynchronous HTTP requests (GET, POST, PUT, DELETE, etc.), handle responses, and catch errors.
+
+Features:
+-> It is promise based which works well with async/await.
+-> It works well both client side (browser) and server side (node.js) environments.
+-> It will parses JSON responses automatically.
+-> It has tools like request interceptor and response interceptors which are middlemens.
+-> request inteceptor will do something before the request is sent like add headers like tokens, log the URL, modify data.
+-> response interceptor will do something after the response is received like log the response, handle errors globally, transform data.
+-> we can cancel the request using axios.
+-> It has built-in Timeouts and error Handlings.
+Need for Cancel the request?
+-> we need to cancel these requests to save resources or prevent unwanted outcomes.
+-> For example: If an user types in search bar the app is giving some suggesstions related to it.
+-> If the user types fast then we don't want to bombard(continuosly) the server with these unneccessary requests.
+-> instead we can take latest request and cancel all the previous requests.
+
+Using http/https Module:
+    -> It is verbose and low-level which means write lot of code and handling data streams manually.
+    -> we have to manually handle response chunks.
+    -> No promises or async/await support out-of-the-box.
+    -> Here out-of-the-box refers to we don't need to install libraries or write code, the feature is built-in.
+    -> No automatic JSON parsing.
+
+Using fetch:
+    -> It is also fetch the data from API's.
+    -> It has no request and response interceptors.
+    -> No progress tracking.
+    -> It has more boilerplate.
+
+Using Axios:
+    -> It is simpler, cleaner syntax.
+    -> It is built-in promise support.
+    -> It handles JSON automatically.
+    -> It is shorter code, less boilerplate refers to repeated stuff we must do.

@@ -1,0 +1,13 @@
+-> Gitlab offers a Rest API that enables us to automate the workflow.
+-> we can integrate external systems and manage Gitlab resources programmatically.
+-> Through this api we can create, edit, delete and retrieve projects.
+-> we can automate the creation and management of issues and merge requests.
+-> We can interact with every feature in Gitlab UI by using API.
+
+Authentication & Access
+    Uses Personal Access Tokens or OAuth2 for secure access.
+    All requests are made to https://gitlab.com/api/v4/.
+
+Project Management
+    Create, view, update, and delete GitLab projects.
+    Manage project members, settings, and visibility.

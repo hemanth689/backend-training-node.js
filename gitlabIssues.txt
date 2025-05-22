@@ -1,0 +1,32 @@
+-> Issues help us to collaborate with our team to plan, track, and deliver work in GitLab. Issues are like
+-> Track feature proposals, tasks, support requests, and bug reports.
+-> Organize and prioritize work with assignees, due dates, and health status.
+-> Facilitate team discussion and decision-making through comments and threaded discussions.
+-> Support custom workflows through templates, labels, epics, and boards.
+-> Integrate with external tools like Zoom, Jira, and email services.
+-> Issues are always associated with a specific project. 
+-> If we have multiple projects in a group, we can view all of the projects’ issues at once.
+
+Workflow Example
+    Create an Issue
+        Go to a GitLab project → Issues → New issue
+    Describe the Problem/Task
+        Provide a clear title and description.
+    Assign It
+        Assign to a team member and add a milestone.
+    Label It
+        Apply labels to organize and filter issues.
+        It helps to categorize, filter and prioritize them.
+    Track and Update
+        Discuss via comments, change status (e.g., open → closed), or reference the issue in commits and merge requests.
+
+An issue is like a digital to-do card. It typically includes:
+
+-> A title
+-> A description
+-> Labels (to categorize the issue, e.g., bug, feature)
+-> An assignee (person responsible)
+-> A milestone (grouping issues under a goal or release)
+-> Due dates
+-> Comments and discussions
+-> Attachments

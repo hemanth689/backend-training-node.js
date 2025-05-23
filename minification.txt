@@ -1,0 +1,44 @@
+-> Minification is the process of removing all unneccessary characters from source code.
+-> without changing it's functionality in order to reduce it's size.
+-> unneccessary characters are like whitespaces, comments, Long variables/function names.
+-> It helps us to give small file sizes to download faster.
+-> Faster execution in browsers or serverless environments.
+-> It can provide a layer of code protection (harder to read).
+
+-> We can use Minification in frontend like HTML, CSS, JavaScript, Node.js apps mostly on client side(React).
+-> We can use tools like Webpack, Terser, or esbuild can minify automatically.
+
+Example:
+
+function greet(name) {
+    // Say hello
+    console.log("Hello, " + name + "!");
+}
+greet("Hemanth");
+
+Minified code:
+function greet(n){console.log("Hello, "+n+"!")}greet("Hemanth");
+
+-> Here it performed removing whitespaces, comments and shortened the variables.
+
+Tools for Minification:
+-> JavaScript
+    -> Terser - Modern, supports ES6+
+    -> UglifyJS – Older, reliable
+    -> esbuild – Extremely fast, bundler + minifier
+-> CSS
+    -> cssnano
+    -> clean-css
+-> HTML
+    -> html-minifier
+
+
+-> Difference between Minification and Obfuscation :
+------------------------------------------------------------------------------------------------
+| Feature        |  Minification                    |  Obfuscation                             |
+| -------------- | -------------------------------- | ---------------------------------------- |
+| Purpose        | Reduce file size                 | Protect code from being easily read      |
+| Readability    | Less readable                    | Intentionally unreadable                 |
+| Variable names | Sometimes shortened              | Usually renamed to obscure names         |
+| Tools          | uglify-js ,  terser ,  cssnano   | javascript-obfuscator ,  obfuscator.io   |
+------------------------------------------------------------------------------------------------

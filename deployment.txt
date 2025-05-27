@@ -1,0 +1,38 @@
+-> Deployment is the process of taking our application (code) from our development environment 
+-> And making it available to users or clients, typically on a server or cloud platform.
+-> We can deploy our app using some free tiers like Render, Railway, Glitch and Heroku(paid) etc,.
+
+Using Render:
+-> Free tier for Node.js apps
+-> Auto-deploys from GitHub
+-> Handles HTTPS automatically
+-> Simple UI
+
+Steps to Deploy Node.js App on Render :
+
+-> Step 1: Push our Code to GitHub
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/your-username/your-repo.git
+git push -u origin main
+
+-> Step 2: Go to https://render.com and Sign In
+
+-> Step 3: Create a New Web Service
+    -> Click New -> Web Service
+    -> Connect our GitHub account
+    -> Choose our repo with the Node app
+
+-> Step 4: Fill in Service Details
+    -> Environment - node
+    -> Build Command - npm install
+    -> start command - npm start
+    -> Root directory - leave blank unless our app is in a subfolder
+    -> Environment Vars - Add .env variables like PORT, JWT_SECRET, etc.
+
+-> Step 5: Click on Create Web Service
+    -> Render will install dependencies, launch our app, and it provides URL like https://your-app.onrender.com
+
+-> Step 6: Done 
+    -> Our Node.js app is live on the internet, and anytime we push to GitHub, it auto-deploys.

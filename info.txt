@@ -1,0 +1,44 @@
+-> Creating a production build using Babel involves transpiling modern JavaScript (ES6+) into older versions (like ES5).
+-> Because that are more widely compatible with browsers or Node.js environments.
+-> This process is essential when you're deploying a JavaScript application to production.
+-> We should do this especially when we are using new JavaScript features in the code.
+-> Babel is a JavaScript compiler. 
+-> It's main purpose is to convert modern JavaScript (like let, const, arrow functions, async/await, etc.) into older JavaScript.
+-> So that can run in environments that do not support these features.
+
+Steps to create production build :
+step1 : initialize the project npm init -y
+
+step2 : Install Babel dependencies 
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+    @babel/core: The core Babel compiler.
+    @babel/cli: The command-line interface for Babel.
+    @babel/preset-env: Smart preset to compile your code based on the target environments.
+
+step3 : configure Babel
+-> Create a config file called .babelrc or babel.config.json: And put this code
+    {
+    "presets": ["@babel/preset-env"]
+    }
+
+    (or)
+
+    {
+    "presets": [
+    ["@babel/preset-env", {
+        "targets": {
+        "node": "14", // or "defaults", "last 2 versions", etc.
+        "browsers": "> 1%, not dead"
+        "useBuiltIns": "usage", // Only include polyfills for features your code actually uses
+        "corejs": 3             // core-js is the library providing actual polyfill code.
+        }
+    }]
+    ]
+    }
+-> we are telling to Babel like I’m writing modern JavaScript (ES6+), 
+-> but I want my code to work in older environments like older browsers or Node.js versions. 
+-> Please help me figure out what needs to be converted or polyfilled — and do it automatically.
+-> plugins tells that which code needs to convert modern JS into older versions.
+-> Polyfills are code that adds missing functionality (like Promise, Array.includes, etc.) in older environments.
+-> Babel will analyze your code and inject only the polyfills you need from core-js.
+-> And we have node in targets so if the node version(specified) supports async/await, Babel won't compile it.

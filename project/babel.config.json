@@ -1,16 +1,25 @@
 {
-    "presets": [
-      ["@babel/preset-env", {
-        "targets": {
-          "node": "14",
-          "browsers": ["> 0.25%", "not dead"]
-        },
-        "modules": "commonjs",
-        "useBuiltIns": "usage",
-        "corejs": 3
-      }]
-    ]
-  }
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "14",
+        "browsers": ["> 0.25%", "not dead"]
+      },
+      "modules": "commonjs",
+      "useBuiltIns": "usage",
+      "corejs": 3
+    }]
+  ],
+  //for building the production build code in human readable format.
+  "plugins": [
+    ["@babel/plugin-transform-runtime", {
+      "corejs": false,
+      "helpers": true,
+      "regenerator": true
+    }]
+  ]
+}
+
 /*
     targets: Define what environments you want to support.
     modules: Transforms import/export into require for Node.

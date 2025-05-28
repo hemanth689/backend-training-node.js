@@ -42,3 +42,7 @@ step3 : configure Babel
 -> Polyfills are code that adds missing functionality (like Promise, Array.includes, etc.) in older environments.
 -> Babel will analyze your code and inject only the polyfills you need from core-js.
 -> And we have node in targets so if the node version(specified) supports async/await, Babel won't compile it.
+
+-> Use dist/ if you're producing something for publishing (like a library or CLI).
+-> Use build/ if you're building something to run locally or for internal use.
+-> for running the babel command : npx babel src --out-dir dist/build.

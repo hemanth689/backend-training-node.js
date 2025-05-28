@@ -1,10 +1,11 @@
 "use strict";
 
-var _require = require('sequelize'),
-  Sequelize = _require.Sequelize;
-var config = require('../config/config').development;
-var sequelize = new Sequelize(config.database, config.username, config.password, config);
-var db = {};
+const {
+  Sequelize
+} = require('sequelize');
+const config = require('../config/config').development;
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
+const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.User = require('./user')(sequelize, Sequelize);

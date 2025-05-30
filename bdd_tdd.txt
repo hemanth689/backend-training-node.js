@@ -1,0 +1,19 @@
+Behavioural Driven Development (BDD):
+-> It describes how the app should behave in natural language.
+-> BDD builds on TDD, but focuses more on behavior from the user's perspective.
+-> It encourages developers, testers, and stakeholders to collaborate on defining application behavior.
+-> It uses human readable descriptions of test cases using "Given-When-Then" syntax.
+-> It results in more meaningful test cases.
+
+Test Driven Development (TDD):
+-> It writes the test cases before you write the code.
+-> TDD emphasizes (give importance) writing unit test first.
+-> And then developing the enough code to make those tests pass.
+-> It benefits to catches the bugs early.
+
+TDD Cycle:
+    -> Write a failing test for a new feature or function.
+    -> Write the minimal code needed to pass the test.
+    -> Refactor the code for clarity, performance, or style.
+    -> Repeat.
+-> This is called the Red-Green-Refactor cycle.

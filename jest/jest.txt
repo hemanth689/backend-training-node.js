@@ -1,0 +1,52 @@
+-> Jest is a JavaScript testing framework developed by Meta (Facebook). 
+-> It is used for testing JavaScript applications like Node.js and React.
+-> It is used for unit testing, integration testing, and snapshot testing.
+-> It has Zero config which means without requiring any setup or configuration files to get started.
+-> There is no need for external tools like Chai, because it has built-in assertion library.
+-> It supports for Mocking dependencies and code coverage.
+
+SnapShot Testing:
+-> Snapshot testing is a technique where the output of a function/component is saved to a file ("snapshot").
+-> And future test runs compare output against this saved version to detect changes.
+-> It detect UI/structure changes.
+-> It quickly catch unexpected rendering issues.
+-> Jest has built-in snapshot testing.
+-> On first run, it creates a __snapshots__ folder with a .snap file.
+-> If you change the component, Jest will warn that the snapshot has changed.
+
+Supertest:
+-> Supertest is a library for testing HTTP APIs. 
+-> It simulates requests like GET, POST, etc., against your Express or Node.js server without starting the server manually.
+-> we can test API endpoints easily.
+-> It is easy to test headers, status codes, and response bodies.
+-> For installation : npm install --save-dev supertest
+
+Zero-config:
+-> we don’t need to create a jest.config.js file
+-> we don’t need to install or configure test runners, assertion libraries, or mocking libraries separately
+-> Jest automatically:
+    Finds test files (like *.test.js or inside __tests__/)
+    Runs the tests
+    Shows a formatted output
+    Supports mocking and code coverage
+
+Mocking:
+-> Mocking is the process of replacing real dependencies/functions with fake versions.
+-> To isolate and test specific parts of your application.
+-> we can use mock to avoid hitting real APIs or databases.
+-> It simulates edge cases or errors.
+-> It will make unit test fast and reliable.
+-> we can mock a module like jest.mock() and for functions like jest.fn().
+-> create fake module or fake function to test.
+
+code coverage:
+-> code coverage is a metric used in software testing that tells us that 
+how much of our code is being executed (or "covered") by our tests.
+-> Types of code coverage:
+    Line coverage
+    Function coverage
+    Branch coverage (if/else or logical)
+    Statement coverage
+-> This tells what percentage of our code is being tested and also which branches or line are not tested.
+-> command : npx jest --coverage otherwise we can put jest --coverage inside package.json file.
+-> This will generate a coverage folder, and shows the report in clear format on browser.

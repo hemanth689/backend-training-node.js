@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`formats user data correctly 1`] = `
+{
+  "contact": "hemanth@gmail.com",
+  "fullName": "HEMANTH",
+  "userId": 1,
+}
+`;

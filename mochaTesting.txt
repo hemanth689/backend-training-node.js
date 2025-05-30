@@ -1,0 +1,44 @@
+-> Mocha is a popular JavaScript test framework used for unit and integration testing.
+-> It is used especially in Node.js applications.
+-> It provides a simple way to write test cases.
+-> It supports features like asynchronous testing(callbacks, promises, and async/await) and test reporting.
+-> It provides a structure for Behavioural Driven Development (BDD) or Test Driven Development (TDD) styles.
+
+-> There are common mocha functions like
+-> describe()   -   it defines a test suite.
+-> it()         -   it defines a single test case.
+-> before()     -   it runs once before all test cases.
+-> after()      -   it runs once after all test cases.
+-> beforeEach() -   it runs before each test case.
+-> afterEach()  -   it runs after each test case.
+
+-> Chai is a common assertion library used with Mocha.
+-> Assertion are the functions that verify that a result meets a specific expectation.
+-> There are several types of assertion functions to test for specific behavior.
+-> For these functions we can pass three arguments like actual, expected, and message(optional).
+
+    assert.equal()          -      it checks whether actual and expected values are equal otherwise throws error.  
+    assert.notEqual()       -      it checks the values are not equal.
+    assert.deepEqual()      -      it checks deep comparison of values and structure.
+    assert.notDeepEqual()   -      similar to deepEqual() it checks for atleast one is wrong.
+
+-> we can implement by installing the npm install --save-dev mocha chai
+-> Mocha is test runner and chai is assertion library.
+-> Chai supports 3 assertion styles:
+-----------------------------------------------------
+| Style    | Syntax Example                         |
+| -------- | -------------------------------------- |
+|  expect  |  expect(value).to.equal(expected);     |
+|  should  |  value.should.equal(expected);         |
+|  assert  |  assert.strictEqual(value, expected);  |
+-----------------------------------------------------
+
+-> we can run all test cases in all test files by using "npm test".
+-> If we have multiple test files then we run single file by using "npx mocha test/math.test.js(path of file)".
+
+-> we can skip some test cases temporarily using
+    it.skip(...)
+    describe.skip(...)
+-> we have .only() method to run a single suite or single test case.
+    describe.only(...)
+    it.only(...)

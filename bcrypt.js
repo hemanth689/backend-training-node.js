@@ -12,6 +12,13 @@
 -> It ensures two identical passwords have different hashes.
 -> bcrypt handles salt generation internally if we use hash(password, saltRounds).
 -> More rounds is equivalent to more secure but slower, typically we use 10 to 14 rounds in production.
+Q. So even if we use same password we will not get same hash right, then how it compares with password and hash during login?
+-> It will generate the hash again because it creates hash with random salt so it might be different from stored hash.
+-> That's why it does like by using bcrypt.compare(password, hash). The hash might be like $2b$10$[salt][hashed_password].
+-> It Extracts the salt from storedHash
+-> Uses the entered password + extracted salt
+-> Recreates the hash
+-> Compares the newly generated hash with the stored hash. so it matches and logged in successfully.
 
 What will happen in each round?
 -> generated salt and password is combined.

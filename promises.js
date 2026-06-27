@@ -4,6 +4,10 @@
 //But Javascript is Synchronous so we need to perform those asynchronous operations in synchronous manner.
 //For this we can use callbacks and promises.
 //problem with callback is inorder to perform we have to use nested callback functions which is also called as callback hell.
+//Q. why callback hell is problem?
+//When multiple asynchronous operations depend on each other, callbacks get deeply nested, making the code hard to read and maintain.
+//Handling errors in nested callbacks is complex, as you must check for errors at each level manually.
+//Each function must handle errors separately, leading to repetitive code.
 //This problem can overcome by using promises. here we have resolve and reject we invoke resolve when the operation is successfull.
 //we invoke reject when the operation is failed.
 //Example:

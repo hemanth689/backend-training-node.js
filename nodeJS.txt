@@ -24,7 +24,9 @@ APIs and microservices
 Data streaming applications
 Command-line tools
 Server-side web applications
--> Its non-blocking, event-driven architecture This means it can keep working while waiting for tasks like reading files or talking to a database. This non-blocking behavior lets Node.js handle many requests efficiently.
+-> Its non-blocking, event-driven architecture.
+-> This means it can keep working while waiting for tasks like reading files or talking to a database. 
+-> This non-blocking behavior lets Node.js handle many requests efficiently.
 
 What Can Node.js Do?
 Web Servers: Create fast, scalable network applications

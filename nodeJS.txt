@@ -14,3 +14,22 @@ Why Do We Use Node.js?
 -> It is used for real-time apps like chat apps, APIs, or streaming services.
 
 -> So when one user sends a message, Node.js quickly handles it and sends it to the other person in real time.
+
+What is Node.js?
+-> Node.js is a runtime javascript environment where we can run the javascript outside the web browser.
+-> It can be used to build the backend servers for our applications or websites.
+-> Node.js excels at handling many simultaneous connections and making it perfect for:
+Real-time applications (chats, gaming, collaboration tools)
+APIs and microservices
+Data streaming applications
+Command-line tools
+Server-side web applications
+-> Its non-blocking, event-driven architecture This means it can keep working while waiting for tasks like reading files or talking to a database. This non-blocking behavior lets Node.js handle many requests efficiently.
+
+What Can Node.js Do?
+Web Servers: Create fast, scalable network applications
+File Operations: Read, write, and manage files on the server
+Database Interaction: Work with databases like MongoDB, MySQL, and more
+APIs: Build RESTful services and GraphQL APIs
+Real-time: Handle WebSockets for live applications
+CLI Tools: Create command-line applications
